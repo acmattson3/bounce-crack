@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ch1i2f5ubyhbr"]
+[gd_scene load_steps=6 format=3 uid="uid://ch1i2f5ubyhbr"]
 
 [ext_resource type="Script" path="res://levels/base_level_2d.gd" id="1_spv6l"]
 [ext_resource type="PackedScene" uid="uid://dlod2omqbdval" path="res://player_paddle/player_paddle_2d.tscn" id="2_qxhxt"]
+[ext_resource type="PackedScene" uid="uid://bixuqfbuwj8ky" path="res://ball/ball_2d.tscn" id="3_7ac1t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yr2eb"]
 size = Vector2(100, 2000)
@@ -31,3 +32,6 @@ shape = SubResource("RectangleShape2D_yr2eb")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelWalls2D"]
 position = Vector2(0, -1018)
 shape = SubResource("RectangleShape2D_csklp")
+
+[node name="Ball2D" parent="." instance=ExtResource("3_7ac1t")]
+position = Vector2(-76, -171)

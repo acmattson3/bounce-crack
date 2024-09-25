@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://bixuqfbuwj8ky"]
+
+[ext_resource type="Script" path="res://ball/ball_2d.gd" id="1_57x1f"]
+[ext_resource type="Texture2D" uid="uid://dy5pmi4ap118i" path="res://ball/TempBall.png" id="1_myhnp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_73s1g"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0nnx"]
+size = Vector2(9.5, 8.5)
+
+[node name="Ball2D" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_57x1f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_73s1g")
+
+[node name="TempBall" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_myhnp")
+region_rect = Rect2(0, 0, 191, 201)
+
+[node name="NewBounceComparePos" type="Marker2D" parent="."]
+position = Vector2(0, -18)
+
+[node name="LeftArea2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea2D"]
+position = Vector2(-15, 0)
+shape = SubResource("RectangleShape2D_e0nnx")
+
+[node name="RightArea2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea2D"]
+position = Vector2(15, 0)
+shape = SubResource("RectangleShape2D_e0nnx")
+
+[node name="TopArea2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopArea2D"]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_e0nnx")
+
+[node name="BottomArea2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomArea2D"]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_e0nnx")
+
+[connection signal="body_entered" from="LeftArea2D" to="." method="_on_left_area_2d_body_entered"]
+[connection signal="body_entered" from="RightArea2D" to="." method="_on_right_area_2d_body_entered"]
+[connection signal="body_entered" from="TopArea2D" to="." method="_on_top_area_2d_body_entered"]
+[connection signal="body_entered" from="BottomArea2D" to="." method="_on_bottom_area_2d_body_entered"]
