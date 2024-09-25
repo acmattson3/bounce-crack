@@ -1,6 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://ch1i2f5ubyhbr"]
+[gd_scene load_steps=5 format=3 uid="uid://ch1i2f5ubyhbr"]
 
 [ext_resource type="Script" path="res://levels/base_level_2d.gd" id="1_spv6l"]
+[ext_resource type="PackedScene" uid="uid://dlod2omqbdval" path="res://player_paddle/player_paddle_2d.tscn" id="2_qxhxt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yr2eb"]
+size = Vector2(100, 2000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csklp"]
+size = Vector2(2500, 100)
 
 [node name="BaseLevel2D" type="Node2D"]
 script = ExtResource("1_spv6l")
+
+[node name="PlayerPaddle2D" parent="." instance=ExtResource("2_qxhxt")]
+position = Vector2(0, 850)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="LevelWalls2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelWalls2D"]
+position = Vector2(1202, 0)
+shape = SubResource("RectangleShape2D_yr2eb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelWalls2D"]
+position = Vector2(-1202, 0)
+shape = SubResource("RectangleShape2D_yr2eb")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelWalls2D"]
+position = Vector2(0, -1018)
+shape = SubResource("RectangleShape2D_csklp")
