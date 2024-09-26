@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch1i2f5ubyhbr"]
+[gd_scene load_steps=7 format=3 uid="uid://ch1i2f5ubyhbr"]
 
 [ext_resource type="Script" path="res://levels/base_level_2d.gd" id="1_spv6l"]
 [ext_resource type="PackedScene" uid="uid://dlod2omqbdval" path="res://player_paddle/player_paddle_2d.tscn" id="2_qxhxt"]
 [ext_resource type="PackedScene" uid="uid://bixuqfbuwj8ky" path="res://ball/ball_2d.tscn" id="3_7ac1t"]
+[ext_resource type="PackedScene" uid="uid://cxf3r7es7ifwj" path="res://blocks/breakable_block.tscn" id="4_i07je"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yr2eb"]
 size = Vector2(100, 2000)
@@ -35,3 +36,18 @@ shape = SubResource("RectangleShape2D_csklp")
 
 [node name="Ball2D" parent="." instance=ExtResource("3_7ac1t")]
 position = Vector2(-76, -171)
+
+[node name="Ball2D2" parent="." instance=ExtResource("3_7ac1t")]
+position = Vector2(23, -158)
+
+[node name="BreakableBlock" parent="." instance=ExtResource("4_i07je")]
+position = Vector2(-780, -699)
+
+[node name="BreakableBlock2" parent="." instance=ExtResource("4_i07je")]
+position = Vector2(457, -691)
+
+[node name="BreakableBlock3" parent="." instance=ExtResource("4_i07je")]
+position = Vector2(-411, -678)
+
+[node name="BreakableBlock4" parent="." instance=ExtResource("4_i07je")]
+position = Vector2(-55, -682)

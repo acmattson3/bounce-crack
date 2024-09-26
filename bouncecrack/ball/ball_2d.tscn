@@ -7,7 +7,7 @@
 radius = 4.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0nnx"]
-size = Vector2(9.5, 8.5)
+size = Vector2(9.5, 21.625)
 
 [node name="Ball2D" type="CharacterBody2D"]
 collision_layer = 2
@@ -29,28 +29,30 @@ position = Vector2(0, -18)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea2D"]
-position = Vector2(-15, 0)
+position = Vector2(-16, 0)
 shape = SubResource("RectangleShape2D_e0nnx")
 
 [node name="RightArea2D" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea2D"]
-position = Vector2(15, 0)
+position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_e0nnx")
 
 [node name="TopArea2D" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopArea2D"]
-position = Vector2(0, -15)
+position = Vector2(0, -16)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_e0nnx")
 
 [node name="BottomArea2D" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomArea2D"]
-position = Vector2(0, 15)
+position = Vector2(0, 16)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_e0nnx")
 
 [connection signal="body_entered" from="LeftArea2D" to="." method="_on_left_area_2d_body_entered"]

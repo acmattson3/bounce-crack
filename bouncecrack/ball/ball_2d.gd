@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Ball
 
 var speed = 1200.0
 var direction := Vector2.DOWN # Start by going straight down
