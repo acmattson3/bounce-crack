@@ -3,12 +3,20 @@ class_name BaseLevel
 # The base level scene for all future levels to inheret from
 # Includes any core functionalities common to all forseeable levels
 
+var ball_scene: PackedScene = load("res://ball/ball_2d.tscn")
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	EventHandler.game_over.connect(_on_game_over)
+	EventHandler.create_ball.connect(_on_create_ball)
+	EventHandler.total_balls = $Balls.get_child_count()
 
+func _on_game_over():
+	print("Game over!")
+	print("Total score: ", EventHandler.score)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_create_ball(location := Vector2.ZERO, direction := Vector2.DOWN, speed := 1200.0):
+	var new_ball = ball_scene.instantiate()
+	new_ball.global_position = location
+	new_ball.direction = direction
+	new_ball.speed = speed
+	$Balls.add_child.call_deferred(new_ball)

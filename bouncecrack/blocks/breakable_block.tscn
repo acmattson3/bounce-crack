@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxf3r7es7ifwj"]
+[gd_scene load_steps=4 format=3 uid="uid://cxf3r7es7ifwj"]
 
 [ext_resource type="Script" path="res://blocks/breakable_block.gd" id="1_d2rnj"]
 [ext_resource type="Texture2D" uid="uid://b3uev8j1c4tru" path="res://blocks/blue_purple_block.png" id="1_l2m82"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6wvx"]
 size = Vector2(194, 80)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgujx"]
-size = Vector2(220, 100)
 
 [node name="BreakableBlock" type="CharacterBody2D"]
 script = ExtResource("1_d2rnj")
@@ -19,11 +16,3 @@ offset = Vector2(0, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_e6wvx")
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_tgujx")
-
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

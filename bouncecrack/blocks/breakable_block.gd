@@ -1,6 +1,10 @@
 extends Node2D
 class_name BreakableBlock
 
+var broken: bool = false
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
+func break_block():
+	if not broken:
+		EventHandler.block_broken.emit(global_position)
+		broken = true
 	queue_free()

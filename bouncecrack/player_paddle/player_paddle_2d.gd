@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Paddle
 
 var speed = 600.0
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var direction := Input.get_axis("paddle_left", "paddle_right")
 	if direction:
 		velocity.x = direction * speed

@@ -34,12 +34,6 @@ shape = SubResource("RectangleShape2D_yr2eb")
 position = Vector2(0, -1018)
 shape = SubResource("RectangleShape2D_csklp")
 
-[node name="Ball2D" parent="." instance=ExtResource("3_7ac1t")]
-position = Vector2(-76, -171)
-
-[node name="Ball2D2" parent="." instance=ExtResource("3_7ac1t")]
-position = Vector2(23, -158)
-
 [node name="BreakableBlock" parent="." instance=ExtResource("4_i07je")]
 position = Vector2(-780, -699)
 
@@ -51,3 +45,7 @@ position = Vector2(-411, -678)
 
 [node name="BreakableBlock4" parent="." instance=ExtResource("4_i07je")]
 position = Vector2(-55, -682)
+
+[node name="Balls" type="Node2D" parent="."]
+
+[node name="Ball2D2" parent="Balls" instance=ExtResource("3_7ac1t")]

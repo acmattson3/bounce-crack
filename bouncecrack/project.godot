@@ -15,6 +15,10 @@ run/main_scene="res://levels/base_level_2d.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventHandler="*res://event_handler.gd"
+
 [display]
 
 window/size/viewport_height=968
