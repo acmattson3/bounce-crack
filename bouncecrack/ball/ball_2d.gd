@@ -9,7 +9,6 @@ var out_of_bounds: bool = false
 func _physics_process(_delta: float) -> void:
 	if global_position.y >= 1000.0 and not out_of_bounds:
 		out_of_bounds = true
-		EventHandler.total_balls -= 1
 		queue_free()
 	
 	velocity = direction * speed
