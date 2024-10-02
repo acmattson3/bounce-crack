@@ -5,7 +5,7 @@
 
 [node name="DemoLevel2D" instance=ExtResource("1_svl7e")]
 
-[node name="BlockGroup2D" parent="." index="5" instance=ExtResource("2_k3i67")]
+[node name="BlockGroup2D" parent="Blocks" index="0" instance=ExtResource("2_k3i67")]
 position = Vector2(0, -580)
 group_size_x = 11
 group_size_y = 8

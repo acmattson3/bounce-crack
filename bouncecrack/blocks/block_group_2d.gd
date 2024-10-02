@@ -23,6 +23,10 @@ const block_dims := Vector2(194.0, 80.0)
 func _ready() -> void:
 	_set_block_group()
 
+func _physics_process(delta: float) -> void:
+	if get_child_count() == 0:
+		queue_free()
+
 func _set_block_group():
 	var total_size := Vector2(group_size_x*(block_dims.x + spacing) - spacing, group_size_y*(block_dims.y + spacing) - spacing)
 	

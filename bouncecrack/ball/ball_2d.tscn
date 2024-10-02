@@ -7,7 +7,7 @@
 radius = 4.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0nnx"]
-size = Vector2(16, 16)
+size = Vector2(10, 14)
 
 [node name="Ball2D" type="CharacterBody2D"]
 collision_layer = 2
@@ -28,21 +28,21 @@ position = Vector2(0, -18)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea2D"]
-position = Vector2(-10, 0)
+position = Vector2(-13, 0)
 shape = SubResource("RectangleShape2D_e0nnx")
 
 [node name="RightArea2D" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea2D"]
-position = Vector2(10, 0)
+position = Vector2(13, 0)
 shape = SubResource("RectangleShape2D_e0nnx")
 
 [node name="TopArea2D" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopArea2D"]
-position = Vector2(0, -10)
+position = Vector2(1.086e-05, -13)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_e0nnx")
 
@@ -50,7 +50,7 @@ shape = SubResource("RectangleShape2D_e0nnx")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomArea2D"]
-position = Vector2(0, 10)
+position = Vector2(0, 13)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_e0nnx")
 
