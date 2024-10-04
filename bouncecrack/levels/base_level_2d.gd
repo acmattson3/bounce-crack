@@ -4,6 +4,7 @@ class_name BaseLevel
 # Includes any core functionalities common to all forseeable levels
 
 @export var ball_on_break: bool = false # Do we spawn balls on breaking blocks?
+@export var rainbow_on_break: bool = true # Do we spawn rainbows on breaking blocks?
 var ball_scene: PackedScene = load("res://ball/ball_2d.tscn")
 
 func _ready() -> void:
@@ -33,6 +34,11 @@ func _on_game_over(game_won):
 func _on_block_broken(location):
 	if ball_on_break:
 		EventHandler.create_ball.emit(location)
+	if rainbow_on_break:
+		spawn_rainbow(location)
+
+func spawn_rainbow(location := Vector2.ZERO):
+	pass # Write me Kylie!
 
 func _on_create_ball(location := Vector2.ZERO, direction := Vector2.DOWN, speed := 1200.0):
 	var new_ball = ball_scene.instantiate()
