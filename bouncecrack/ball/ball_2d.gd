@@ -15,6 +15,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _on_bottom_area_2d_body_entered(body: Node2D) -> void:
+	print("Bottom!")
 	if abs(direction.y) < 0.05:
 		direction.x = -direction.x
 	if body is Paddle:
@@ -24,14 +25,17 @@ func _on_bottom_area_2d_body_entered(body: Node2D) -> void:
 	if body is BreakableBlock:
 		body.break_block()
 func _on_top_area_2d_body_entered(body: Node2D) -> void:
+	print("Top!")
 	direction.y = -direction.y
 	if body is BreakableBlock:
 		body.break_block()
 func _on_right_area_2d_body_entered(body: Node2D) -> void:
+	print("Right!")
 	direction.x = -direction.x
 	if body is BreakableBlock:
 		body.break_block()
 func _on_left_area_2d_body_entered(body: Node2D) -> void:
+	print("Left!")
 	if abs(direction.x) < 0.05:
 		direction.y = -direction.y
 	direction.x = -direction.x

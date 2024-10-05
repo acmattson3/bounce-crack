@@ -22,21 +22,21 @@ position = Vector2(0, -18)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea2D"]
-position = Vector2(-18, 0)
+position = Vector2(-21, 0)
 shape = SubResource("RectangleShape2D_e0nnx")
 
 [node name="RightArea2D" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea2D"]
-position = Vector2(18, 0)
+position = Vector2(21, 0)
 shape = SubResource("RectangleShape2D_e0nnx")
 
 [node name="TopArea2D" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopArea2D"]
-position = Vector2(5.60284e-06, -18)
+position = Vector2(5.60284e-06, -21)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_e0nnx")
 
@@ -44,7 +44,7 @@ shape = SubResource("RectangleShape2D_e0nnx")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomArea2D"]
-position = Vector2(-2.38419e-07, 18)
+position = Vector2(-2.38419e-07, 21)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_e0nnx")
 
