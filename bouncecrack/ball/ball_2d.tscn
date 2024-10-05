@@ -1,20 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bixuqfbuwj8ky"]
+[gd_scene load_steps=4 format=3 uid="uid://bixuqfbuwj8ky"]
 
 [ext_resource type="Script" path="res://ball/ball_2d.gd" id="1_57x1f"]
 [ext_resource type="Texture2D" uid="uid://dy5pmi4ap118i" path="res://ball/TempBall.png" id="1_myhnp"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_73s1g"]
-radius = 4.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0nnx"]
-size = Vector2(10, 14)
+size = Vector2(10, 12)
 
 [node name="Ball2D" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_57x1f")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_73s1g")
 
 [node name="TempBall" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
@@ -28,21 +22,21 @@ position = Vector2(0, -18)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea2D"]
-position = Vector2(-15, 0)
+position = Vector2(-18, 0)
 shape = SubResource("RectangleShape2D_e0nnx")
 
 [node name="RightArea2D" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea2D"]
-position = Vector2(15, 0)
+position = Vector2(18, 0)
 shape = SubResource("RectangleShape2D_e0nnx")
 
 [node name="TopArea2D" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopArea2D"]
-position = Vector2(1.086e-05, -15)
+position = Vector2(5.60284e-06, -18)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_e0nnx")
 
@@ -50,7 +44,7 @@ shape = SubResource("RectangleShape2D_e0nnx")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomArea2D"]
-position = Vector2(0, 15)
+position = Vector2(-2.38419e-07, 18)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_e0nnx")
 
