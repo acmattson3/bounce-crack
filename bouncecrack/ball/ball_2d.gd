@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Ball
 
-const max_speed = 4000.0
+const max_speed = 2000.0
 var speed = 1200.0:
 	set(value):
 		if value > max_speed:
