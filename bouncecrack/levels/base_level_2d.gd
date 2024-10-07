@@ -46,3 +46,6 @@ func _on_create_ball(location := Vector2.ZERO, direction := Vector2.DOWN, speed 
 	new_ball.direction = direction
 	new_ball.speed = speed
 	$Balls.add_child.call_deferred(new_ball)
+	
+		
+		

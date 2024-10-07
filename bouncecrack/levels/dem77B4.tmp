@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://start/start.gd" id="4_d1bxf"]
 
 [node name="DemoLevel2D" instance=ExtResource("1_svl7e")]
+ball_on_break = null
+rainbow_on_break = null
 
 [node name="BlockGroup2D" parent="Blocks" index="0" instance=ExtResource("2_k3i67")]
 position = Vector2(0, -580)
