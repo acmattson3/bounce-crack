@@ -9,5 +9,5 @@ script = ExtResource("2_jn6q1")
 
 [node name="BlockGroup2D" parent="Blocks" index="0" instance=ExtResource("2_k3i67")]
 position = Vector2(0, -580)
-group_size_x = 1
-group_size_y = 1
+group_size_x = 11
+group_size_y = 8
