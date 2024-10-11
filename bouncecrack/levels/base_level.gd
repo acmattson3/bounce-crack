@@ -23,8 +23,12 @@ func _on_game_over(game_won):
 	$GameOverScreen.show()
 	if game_won:
 		%TempGameOverLabel.text = "You win!"
+		%NextLevelButton.show()
+		%Spacer4.show()
 	else:
 		%TempGameOverLabel.text = "You lose!"
+		%NextLevelButton.hide()
+		%Spacer4.hide()
 	
 	%TempScoreLabel.text = "Total score: "+str(EventHandler.score)
 	
@@ -53,7 +57,7 @@ func _on_exit_to_menu(_error):
 func _on_restart_button_pressed() -> void:
 	var prev_name = name
 	name = "queued_level" # The new scene wants our name!
-	EventHandler.start_level(prev_name)
+	EventHandler.start_level(prev_name+".tscn")
 	queue_free()
 
 func _on_exit_to_menu_button_pressed() -> void:
@@ -61,5 +65,5 @@ func _on_exit_to_menu_button_pressed() -> void:
 	queue_free()
 
 func _on_next_level_button_pressed() -> void:
-	EventHandler.start_level(name, true)
+	EventHandler.start_level(name+".tscn", true)
 	queue_free()

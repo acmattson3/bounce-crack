@@ -3,6 +3,8 @@ extends Node
 # Menu signals
 signal exit_to_menu(error)
 
+var _levels: Array = []
+
 # Game signals
 signal block_broken(location)
 signal create_ball(location, direction, speed) # Emit me to make a new ball!
@@ -14,6 +16,7 @@ var score: int = 0:
 		score = value if value >= 0 else 0
 
 func _ready() -> void:
+	fill_levels()
 	block_broken.connect(_on_block_broken)
 	game_over.connect(_on_game_over)
 
@@ -27,17 +30,43 @@ func _on_game_over(_game_won):
 func start_level(level_name: String, advance_level := false):
 	var level_path := ""
 	if advance_level:
-		var level_num: int = level_name.lstrip("level_").to_int() + 1
-		print(level_name.lstrip("level_"))
-		level_path = "res://levels/level_"+str(level_num)+".tscn"
+		print(_levels)
+		print(level_name)
+		var new_level_idx: int = _levels.find(level_name)+1
+		#print(new_level_idx, " VS ", _levels.size())
+		if new_level_idx < _levels.size():
+			level_path = "res://levels/"+_levels[new_level_idx]
+		else:
+			print("All levels completed!")
+			exit_to_menu.emit("All levels completed!")
+			return
 	else:
-		level_path = "res://levels/"+level_name+".tscn"
+		level_path = "res://levels/"+level_name
 	
 	var level = load(level_path)
 	if level:
+		await get_tree().process_frame
 		is_game_over = false
 		score = 0
 		get_tree().root.add_child(level.instantiate(), true)
 	else:
 		print("Failed to load scene: ", level_path)
 		exit_to_menu.emit("Failed to load scene: "+level_path)
+
+func fill_levels():
+	_levels = []
+	var dir = DirAccess.open("res://levels")
+	if dir:
+		dir.list_dir_begin()
+		var filename = dir.get_next()
+		while filename != "":
+			if not dir.current_is_dir():
+				if filename.get_extension() == "tscn" and filename != "base_level.tscn":
+					_levels.append(filename)
+			filename = dir.get_next()
+		_levels.sort()
+	else:
+		print("Failed to open `res://levels` directory.")
+
+func get_levels():
+	return _levels

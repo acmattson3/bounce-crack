@@ -159,54 +159,6 @@ theme_override_constants/h_separation = 25
 theme_override_constants/v_separation = 25
 columns = 4
 
-[node name="level_1" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 48
-text = "Level 1"
-
-[node name="level_2" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 48
-text = "Level 2"
-
-[node name="level_3" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 48
-text = "Level 3"
-
-[node name="level_4" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 48
-text = "Level 4"
-
-[node name="level_5" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 48
-text = "Level 5"
-
-[node name="level_6" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 48
-text = "Level 6"
-
-[node name="level_7" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 48
-text = "Level 7"
-
-[node name="level_8" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 48
-text = "Level 8"
-
 [node name="Spacer2" type="Control" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3

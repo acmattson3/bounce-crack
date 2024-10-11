@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://2tp4ccmlp36w"]
+
+[ext_resource type="PackedScene" uid="uid://ch1i2f5ubyhbr" path="res://levels/base_level.tscn" id="1_acc23"]
+[ext_resource type="Script" path="res://levels/demo_level.gd" id="2_xipbn"]
+[ext_resource type="PackedScene" uid="uid://ct2jjmuvxpa3n" path="res://blocks/block_group_2d.tscn" id="3_rbh4a"]
+
+[node name="demo_level" instance=ExtResource("1_acc23")]
+script = ExtResource("2_xipbn")
+
+[node name="BlockGroup2D" parent="Blocks" index="0" instance=ExtResource("3_rbh4a")]
+position = Vector2(0, -570)
+group_size_x = 1
+group_size_y = 1

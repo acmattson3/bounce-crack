@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+var levels: Array
+
 var error_label_text: String = "":
 	set(value):
 		if value != "":
@@ -14,13 +16,24 @@ var error_label_text: String = "":
 func _ready() -> void:
 	EventHandler.exit_to_menu.connect(_on_exit_to_menu)
 	
-	process_mode = PROCESS_MODE_ALWAYS # We aren't affected by pausing
-	for button in %LevelsGridContainer.get_children():
-		button.pressed.connect(_handle_level_button.bind(button.name))
+	process_mode = PROCESS_MODE_ALWAYS # # We are unaffected by pausing the scene tree.
+	
+	for level: String in EventHandler.get_levels():
+		var new_button := Button.new()
+		new_button.add_theme_font_size_override("font_size", 48)
+		new_button.name = level.rstrip(".tscn")
+		new_button.text = new_button.name.capitalize()
+		new_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		new_button.pressed.connect(_handle_level_button.bind(level))
+		%LevelsGridContainer.add_child(new_button, true)
+	
+	#for button in %LevelsGridContainer.get_children():
+	#	button.pressed.connect(_handle_level_button.bind(button.name))
 
 
-func _handle_level_button(button_name):
-	EventHandler.start_level(button_name)
+func _handle_level_button(level_name):
+	print("_handle_level_button: ", level_name)
+	EventHandler.start_level(level_name)
 	hide()
 
 func _on_exit_to_menu(error: String = ""):
@@ -39,5 +52,5 @@ func _on_back_button_pressed() -> void:
 	$LevelsContainer.hide()
 
 func _on_play_button_pressed() -> void:
-	EventHandler.start_level("demo_level_2d")
+	EventHandler.start_level("demo_level.tscn")
 	hide()

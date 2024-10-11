@@ -2,6 +2,7 @@ extends PanelContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	%LevelNameLabel.text = get_parent().name.capitalize()
 	process_mode = PROCESS_MODE_ALWAYS # We are unaffected by pausing the scene tree.
 	get_tree().paused = true
 
