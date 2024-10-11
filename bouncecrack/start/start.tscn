@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8e2orb1qqu53"]
+
+[ext_resource type="Script" path="res://start/start.gd" id="1_bvhw1"]
+
+[node name="StartOverlay" type="PanelContainer"]
+offset_right = 1600.0
+offset_bottom = 1000.0
+script = ExtResource("1_bvhw1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="ExitToMenuButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 72
+text = "Exit to Menu"
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="PressEnterLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 96
+text = "Press Enter to Begin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer3" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ExitToMenuButton" to="." method="_on_exit_to_menu_button_pressed"]

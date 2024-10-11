@@ -11,6 +11,7 @@ func _ready() -> void:
 	EventHandler.game_over.connect(_on_game_over)
 	EventHandler.create_ball.connect(_on_create_ball)
 	EventHandler.block_broken.connect(_on_block_broken)
+	EventHandler.exit_to_menu.connect(_on_exit_to_menu)
 
 func _physics_process(_delta):
 	if $Balls.get_child_count() == 0 and not EventHandler.is_game_over:
@@ -19,17 +20,16 @@ func _physics_process(_delta):
 		EventHandler.game_over.emit(true) # You win!
 
 func _on_game_over(game_won):
-	$TempGameOverLabel.show()
-	$TempScoreLabel.show()
+	$GameOverScreen.show()
 	if game_won:
-		$TempGameOverLabel.text = "You win!"
+		%TempGameOverLabel.text = "You win!"
 	else:
-		$TempGameOverLabel.text = "You lose!"
+		%TempGameOverLabel.text = "You lose!"
 	
-	$TempScoreLabel.text = "Total score: "+str(EventHandler.score)
+	%TempScoreLabel.text = "Total score: "+str(EventHandler.score)
 	
-	print($TempGameOverLabel.text)
-	print($TempScoreLabel.text)
+	print(%TempGameOverLabel.text)
+	print(%TempScoreLabel.text)
 
 func _on_block_broken(location):
 	if ball_on_break:
@@ -37,7 +37,7 @@ func _on_block_broken(location):
 	if rainbow_on_break:
 		spawn_rainbow(location)
 
-func spawn_rainbow(location := Vector2.ZERO):
+func spawn_rainbow(_location := Vector2.ZERO):
 	pass # Write me Kylie!
 
 func _on_create_ball(location := Vector2.ZERO, direction := Vector2.DOWN, speed := 1200.0):
@@ -46,3 +46,16 @@ func _on_create_ball(location := Vector2.ZERO, direction := Vector2.DOWN, speed 
 	new_ball.direction = direction
 	new_ball.speed = speed
 	$Balls.add_child.call_deferred(new_ball)
+	
+func _on_exit_to_menu():
+	queue_free()
+
+func _on_restart_button_pressed() -> void:
+	var prev_name = name
+	name = "queued_level"
+	EventHandler.start_level(prev_name)
+	queue_free()
+
+func _on_exit_to_menu_button_pressed() -> void:
+	EventHandler.exit_to_menu.emit()
+	queue_free()

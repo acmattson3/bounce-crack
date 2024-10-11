@@ -1,0 +1,213 @@
+[gd_scene load_steps=2 format=3 uid="uid://u482mko5sg8j"]
+
+[ext_resource type="Script" path="res://menu/menu.gd" id="1_d6tww"]
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_d6tww")
+
+[node name="MenuContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MenuContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="MenuContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="TitleLabel" type="Label" parent="MenuContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 128
+text = "BounceCrack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="MenuContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="MenuContainer/NinePatchRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="PlayButton" type="Button" parent="MenuContainer/NinePatchRect/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_font_sizes/font_size = 64
+text = "Play"
+
+[node name="Spacer1" type="Control" parent="MenuContainer/NinePatchRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ViewLevelsButton" type="Button" parent="MenuContainer/NinePatchRect/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_font_sizes/font_size = 64
+text = "View Levels"
+
+[node name="Spacer2" type="Control" parent="MenuContainer/NinePatchRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Spacer3" type="Control" parent="MenuContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="LevelsContainer" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="LevelsContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelsContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="LevelsContainer/NinePatchRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelsContainer/NinePatchRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spacer" type="Control" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+theme_override_font_sizes/font_size = 96
+text = "Levels"
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 48
+text = "Back"
+
+[node name="Spacer3" type="Control" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="LevelsGridContainer" type="GridContainer" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 4
+
+[node name="level_1" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Level 1"
+
+[node name="level_2" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Level 2"
+
+[node name="level_3" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Level 3"
+
+[node name="level_4" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Level 4"
+
+[node name="level_5" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Level 5"
+
+[node name="level_6" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Level 6"
+
+[node name="level_7" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Level 7"
+
+[node name="level_8" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Level 8"
+
+[node name="Spacer2" type="Control" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="LevelsContainer/NinePatchRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[connection signal="pressed" from="MenuContainer/NinePatchRect/VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuContainer/NinePatchRect/VBoxContainer/HBoxContainer/ViewLevelsButton" to="." method="_on_view_levels_button_pressed"]
+[connection signal="pressed" from="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

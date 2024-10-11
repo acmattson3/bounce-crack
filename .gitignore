@@ -15,5 +15,5 @@ data_*/
 mono_crash.*.json
 
 # Game export ignores
+*export*
 *.zip
-*_export*
