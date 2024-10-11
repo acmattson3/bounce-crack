@@ -5,7 +5,9 @@ class_name BaseLevel
 
 @export var ball_on_break: bool = false # Do we spawn balls on breaking blocks?
 @export var rainbow_on_break: bool = true # Do we spawn rainbows on breaking blocks?
+@export var power_up_on_break: bool = true
 var ball_scene: PackedScene = load("res://ball/ball_2d.tscn")
+var power_up_scene: PackedScene = load("res://power_up/power_up.tscn")
 
 func _ready() -> void:
 	EventHandler.game_over.connect(_on_game_over)
@@ -36,6 +38,13 @@ func _on_block_broken(location):
 		EventHandler.create_ball.emit(location)
 	if rainbow_on_break:
 		spawn_rainbow(location)
+	if power_up_on_break:
+		spawn_power_up(location)
+
+func spawn_power_up(location := Vector2.ZERO):
+	var new_power_up = power_up_scene.instantiate()
+	new_power_up.global_position = location
+	$PowerUps.add_child.call_deferred(new_power_up)
 
 func spawn_rainbow(location := Vector2.ZERO):
 	pass # Write me Kylie!

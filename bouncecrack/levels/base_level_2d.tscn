@@ -39,6 +39,8 @@ shape = SubResource("RectangleShape2D_csklp")
 
 [node name="Blocks" type="Node2D" parent="."]
 
+[node name="PowerUps" type="Node2D" parent="."]
+
 [node name="TempGameOverLabel" type="Label" parent="."]
 visible = false
 offset_left = -705.0
