@@ -14,6 +14,6 @@ export_presets.cfg
 data_*/
 mono_crash.*.json
 
-# Exports
+# Game export ignores
 *export*
 *.zip
