@@ -1,5 +1,14 @@
 extends CanvasLayer
 
+var error_label_text: String = "":
+	set(value):
+		if value != "":
+			%ErrorLabel.show()
+			%ErrorLabel.text = value
+		else:
+			%ErrorLabel.hide()
+			%ErrorLabel.text = ""
+		error_label_text = value
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -7,10 +16,19 @@ func _ready() -> void:
 	
 	process_mode = PROCESS_MODE_ALWAYS # We aren't affected by pausing
 	for button in %LevelsGridContainer.get_children():
-		button.pressed.connect(EventHandler.start_level.bind(button.name))
+		button.pressed.connect(_handle_level_button.bind(button.name))
 
-func _on_exit_to_menu():
+
+func _handle_level_button(button_name):
+	EventHandler.start_level(button_name)
+	hide()
+
+func _on_exit_to_menu(error: String = ""):
+	await get_tree().process_frame
 	show()
+	error_label_text = error
+	$MenuContainer.show()
+	$LevelsContainer.hide()
 
 func _on_view_levels_button_pressed() -> void:
 	$MenuContainer.hide()

@@ -83,6 +83,15 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
+[node name="ErrorLabel" type="Label" parent="MenuContainer/NinePatchRect/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.796078, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="LevelsContainer" type="PanelContainer" parent="."]
 visible = false
 anchors_preset = 15

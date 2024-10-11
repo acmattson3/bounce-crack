@@ -97,9 +97,20 @@ size_flags_vertical = 3
 [node name="RestartButton" type="Button" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 96
-text = "Restart"
+text = " Restart "
 
 [node name="Spacer2" type="Control" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="NextLevelButton" type="Button" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = " Next Level "
+
+[node name="Spacer4" type="Control" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -108,7 +119,7 @@ size_flags_stretch_ratio = 0.1
 [node name="ExitToMenuButton" type="Button" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 96
-text = "Exit to Menu"
+text = " Exit to Menu "
 
 [node name="Spacer3" type="Control" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -125,4 +136,5 @@ offset_left = -1600.0
 offset_top = -1000.0
 
 [connection signal="pressed" from="GameOverScreen/VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="GameOverScreen/VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
 [connection signal="pressed" from="GameOverScreen/VBoxContainer/HBoxContainer/ExitToMenuButton" to="." method="_on_exit_to_menu_button_pressed"]

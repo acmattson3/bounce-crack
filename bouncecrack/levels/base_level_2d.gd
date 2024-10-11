@@ -52,10 +52,14 @@ func _on_exit_to_menu():
 
 func _on_restart_button_pressed() -> void:
 	var prev_name = name
-	name = "queued_level"
+	name = "queued_level" # The new scene wants our name!
 	EventHandler.start_level(prev_name)
 	queue_free()
 
 func _on_exit_to_menu_button_pressed() -> void:
 	EventHandler.exit_to_menu.emit()
+	queue_free()
+
+func _on_next_level_button_pressed() -> void:
+	EventHandler.start_level(name, true)
 	queue_free()
