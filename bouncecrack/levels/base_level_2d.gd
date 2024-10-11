@@ -47,7 +47,7 @@ func _on_create_ball(location := Vector2.ZERO, direction := Vector2.DOWN, speed 
 	new_ball.speed = speed
 	$Balls.add_child.call_deferred(new_ball)
 	
-func _on_exit_to_menu():
+func _on_exit_to_menu(_error):
 	queue_free()
 
 func _on_restart_button_pressed() -> void:
