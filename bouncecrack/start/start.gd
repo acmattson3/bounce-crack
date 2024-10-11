@@ -15,5 +15,5 @@ func _process(_delta: float) -> void:
 		get_tree().paused = true
 
 func _on_exit_to_menu_button_pressed() -> void:
-	EventHandler.exit_to_menu.emit()
+	EventHandler.exit_to_menu.emit("")
 	queue_free()
