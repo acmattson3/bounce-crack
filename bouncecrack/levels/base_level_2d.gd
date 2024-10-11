@@ -39,7 +39,8 @@ func _on_block_broken(location):
 	if rainbow_on_break:
 		spawn_rainbow(location)
 	if power_up_on_break:
-		spawn_power_up(location)
+		if (randi_range(0, 10) == 1):
+			spawn_power_up(location)
 
 func spawn_power_up(location := Vector2.ZERO):
 	var new_power_up = power_up_scene.instantiate()
