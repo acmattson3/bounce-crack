@@ -14,19 +14,20 @@ func _ready() -> void:
 	block_broken.connect(_on_block_broken)
 	game_over.connect(_on_game_over)
 
-func _on_block_broken(location):
+func _on_block_broken(_location):
 	score += 1
 
 func _on_game_over(_game_won):
 	is_game_over = true
 	
-func on_starting(on_press):
+func on_starting(_on_press):
 	start = true
 	
 func switch_scene(to_scene_path: String):
 	var next_scene = load(to_scene_path) 
 	if next_scene: # Ensure the scene path is valid.
 		# Change to the new scene.
+		get_tree().unload_current_scene()
 		get_tree().call_deferred("change_scene_to_packed", next_scene)
 	else:
 		print("Failed to load scene: ", to_scene_path) 

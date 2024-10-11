@@ -1,16 +1,18 @@
-extends Label
+extends PanelContainer
 
-var play_scene: String = "res://levels/base_level_2d.gd"
+#var play_scene: String = "res://levels/demo_level_2d.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_process_input(true) 
-
-func _input(ev):
-	if ev == KEY_ENTER:
-		print("hi")
-		EventHandler.switch_scene(play_scene)
+	process_mode = PROCESS_MODE_ALWAYS # We are unaffected by pausing the scene tree.
+	get_tree().paused = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("enter") and visible:
+		get_tree().paused = false
+		hide()
+	elif Input.is_action_just_pressed("escape") and not visible:
+		show()
+		get_tree().paused = true
+	

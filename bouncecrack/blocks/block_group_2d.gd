@@ -23,7 +23,7 @@ const block_dims := Vector2(194.0, 80.0)
 func _ready() -> void:
 	_set_block_group()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if get_child_count() == 0:
 		queue_free()
 

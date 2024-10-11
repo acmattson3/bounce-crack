@@ -37,7 +37,7 @@ func _on_block_broken(location):
 	if rainbow_on_break:
 		spawn_rainbow(location)
 
-func spawn_rainbow(location := Vector2.ZERO):
+func spawn_rainbow(_location := Vector2.ZERO):
 	pass # Write me Kylie!
 
 func _on_create_ball(location := Vector2.ZERO, direction := Vector2.DOWN, speed := 1200.0):

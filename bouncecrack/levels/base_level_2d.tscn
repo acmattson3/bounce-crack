@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch1i2f5ubyhbr"]
+[gd_scene load_steps=7 format=3 uid="uid://ch1i2f5ubyhbr"]
 
 [ext_resource type="Script" path="res://levels/base_level_2d.gd" id="1_spv6l"]
 [ext_resource type="PackedScene" uid="uid://dlod2omqbdval" path="res://player_paddle/player_paddle_2d.tscn" id="2_qxhxt"]
 [ext_resource type="PackedScene" uid="uid://bixuqfbuwj8ky" path="res://ball/ball_2d.tscn" id="3_7ac1t"]
+[ext_resource type="PackedScene" uid="uid://b8e2orb1qqu53" path="res://start/start.tscn" id="4_pv4yk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yr2eb"]
-size = Vector2(100, 2000)
+size = Vector2(100, 2200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csklp"]
-size = Vector2(2500, 100)
+size = Vector2(3400, 100)
 
 [node name="BaseLevel2D" type="Node2D"]
 script = ExtResource("1_spv6l")
@@ -22,20 +23,21 @@ zoom = Vector2(0.5, 0.5)
 [node name="LevelWalls2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelWalls2D"]
-position = Vector2(1202, 0)
+position = Vector2(1650, 0)
 shape = SubResource("RectangleShape2D_yr2eb")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelWalls2D"]
-position = Vector2(-1202, 0)
+position = Vector2(-1650, 0)
 shape = SubResource("RectangleShape2D_yr2eb")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelWalls2D"]
-position = Vector2(0, -1018)
+position = Vector2(0, -1050)
 shape = SubResource("RectangleShape2D_csklp")
 
 [node name="Balls" type="Node2D" parent="."]
 
 [node name="Ball2D2" parent="Balls" instance=ExtResource("3_7ac1t")]
+position = Vector2(0, 240)
 
 [node name="Blocks" type="Node2D" parent="."]
 
@@ -60,3 +62,7 @@ theme_override_font_sizes/font_size = 64
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="StartOverlay" parent="." instance=ExtResource("4_pv4yk")]
+offset_left = -1600.0
+offset_top = -1000.0
