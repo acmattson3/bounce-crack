@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BounceCrack"
-run/main_scene="res://levels/demo_level_2d.tscn"
+run/main_scene="res://menu/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,11 +19,14 @@ config/icon="res://icon.svg"
 
 EventHandler="*res://event_handler.gd"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [display]
 
 window/size/viewport_width=1600
 window/size/viewport_height=1000
-window/size/resizable=false
 
 [input]
 

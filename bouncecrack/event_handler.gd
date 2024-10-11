@@ -1,10 +1,13 @@
 extends Node
 
+# Menu signals
+signal exit_to_menu
+
+# Game signals
 signal block_broken(location)
 signal create_ball(location, direction, speed) # Emit me to make a new ball!
 signal game_over(game_won)
 var is_game_over := false
-var start := false
 
 var score: int = 0:
 	set(value):
@@ -19,15 +22,14 @@ func _on_block_broken(_location):
 
 func _on_game_over(_game_won):
 	is_game_over = true
-	
-func on_starting(_on_press):
-	start = true
-	
-func switch_scene(to_scene_path: String):
-	var next_scene = load(to_scene_path) 
-	if next_scene: # Ensure the scene path is valid.
-		# Change to the new scene.
-		get_tree().unload_current_scene()
-		get_tree().call_deferred("change_scene_to_packed", next_scene)
+
+# Expects level_name to be the name of the level scene (minus .tscn)
+func start_level(level_name: String):
+	is_game_over = false
+	score = 0
+	var level_path = "res://levels/"+level_name+".tscn"
+	var level = load(level_path)
+	if level:
+		get_tree().root.add_child(level.instantiate(), true)
 	else:
-		print("Failed to load scene: ", to_scene_path) 
+		print("Failed to load scene: ", level_path) 
