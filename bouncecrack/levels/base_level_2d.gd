@@ -57,7 +57,7 @@ func _on_restart_button_pressed() -> void:
 	queue_free()
 
 func _on_exit_to_menu_button_pressed() -> void:
-	EventHandler.exit_to_menu.emit()
+	EventHandler.exit_to_menu.emit("")
 	queue_free()
 
 func _on_next_level_button_pressed() -> void:
