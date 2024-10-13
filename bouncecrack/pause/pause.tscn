@@ -35,13 +35,25 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ExitToMenuButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="RestartLevel" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 72
+text = "Restart"
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="ExitToMenuButton2" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 72
 text = "Exit to Menu"
 
-[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer"]
+[node name="Spacer4" type="Control" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -57,7 +69,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 theme_override_font_sizes/font_size = 96
-text = "Press Enter to Begin"
+text = "Press Space to Begin"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -66,4 +78,5 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/ExitToMenuButton" to="." method="_on_exit_to_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RestartLevel" to="." method="_on_restart_level_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ExitToMenuButton2" to="." method="_on_exit_to_menu_button_pressed"]

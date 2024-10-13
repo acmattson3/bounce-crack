@@ -26,9 +26,6 @@ func _ready() -> void:
 		new_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		new_button.pressed.connect(_handle_level_button.bind(level))
 		%LevelsGridContainer.add_child(new_button, true)
-	
-	#for button in %LevelsGridContainer.get_children():
-	#	button.pressed.connect(_handle_level_button.bind(button.name))
 
 
 func _handle_level_button(level_name):
