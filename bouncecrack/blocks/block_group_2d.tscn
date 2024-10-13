@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ct2jjmuvxpa3n"]
+[gd_scene load_steps=3 format=3 uid="uid://ct2jjmuvxpa3n"]
 
 [ext_resource type="Script" path="res://blocks/block_group_2d.gd" id="1_hn74p"]
+[ext_resource type="PackedScene" uid="uid://cxf3r7es7ifwj" path="res://blocks/breakable_block.tscn" id="2_ews47"]
 
 [node name="BlockGroup2D" type="Node2D"]
 script = ExtResource("1_hn74p")
+block_scene = ExtResource("2_ews47")

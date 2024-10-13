@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://br68qsyxwa2sn"]
+
+[ext_resource type="Texture2D" uid="uid://b3uev8j1c4tru" path="res://blocks/blue_purple_block.png" id="1_qp8cb"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lfh6g"]
+_surfaces = [{
+"2d": true,
+"aabb": AABB(-40, -17, 0, 80, 35, 0),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63),
+"format": 34393296913,
+"index_count": 6,
+"index_data": PackedByteArray(3, 0, 0, 0, 1, 0, 1, 0, 2, 0, 3, 0),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 32, 194, 0, 0, 144, 65, 0, 0, 32, 194, 0, 0, 136, 193, 0, 0, 32, 66, 0, 0, 136, 193, 0, 0, 32, 66, 0, 0, 144, 65)
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_se74l"]
+size = Vector2(194, 80)
+
+[node name="UnbreakableBlock" type="StaticBody2D"]
+
+[node name="BluePurpleBlock" type="MeshInstance2D" parent="."]
+modulate = Color(0.140447, 0.140447, 0.140447, 1)
+scale = Vector2(2.44286, 2.44286)
+mesh = SubResource("ArrayMesh_lfh6g")
+texture = ExtResource("1_qp8cb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_se74l")
