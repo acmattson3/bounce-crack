@@ -30,10 +30,7 @@ func _on_game_over(_game_won):
 func start_level(level_name: String, advance_level := false):
 	var level_path := ""
 	if advance_level:
-		print(_levels)
-		print(level_name)
 		var new_level_idx: int = _levels.find(level_name)+1
-		#print(new_level_idx, " VS ", _levels.size())
 		if new_level_idx < _levels.size():
 			level_path = "res://levels/"+_levels[new_level_idx]
 		else:
