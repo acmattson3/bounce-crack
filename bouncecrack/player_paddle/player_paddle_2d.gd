@@ -9,7 +9,7 @@ class_name Paddle
 		paddle_width = value
 
 var speed = 900.0
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return # Allows us to use @tool without breaking the editor
 	var direction := Input.get_axis("paddle_left", "paddle_right")

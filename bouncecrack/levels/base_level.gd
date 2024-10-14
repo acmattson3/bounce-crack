@@ -9,7 +9,7 @@ class_name BaseLevel
 @export_range(0.0, 1.0) var power_up_probability: float = 0.1
 
 var ball_scene: PackedScene = load("res://ball/ball_2d.tscn")
-var power_up_scene: PackedScene = load("res://power_up/power_up.tscn")
+var power_up_scene: PackedScene = load("res://power_up/spawn_ball_power_up.tscn")
 
 func _ready() -> void:
 	EventHandler.game_over.connect(_on_game_over)

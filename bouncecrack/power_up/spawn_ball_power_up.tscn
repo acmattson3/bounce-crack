@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6obwd83n3fkc"]
+
+[ext_resource type="PackedScene" uid="uid://dgrk60fsnxk7p" path="res://power_up/power_up.tscn" id="1_chn7q"]
+[ext_resource type="Script" path="res://power_up/spawn_ball_power_up.gd" id="2_kefvf"]
+
+[node name="spawn_ball_power_up" instance=ExtResource("1_chn7q")]
+script = ExtResource("2_kefvf")
