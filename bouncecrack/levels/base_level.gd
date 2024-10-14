@@ -5,8 +5,9 @@ class_name BaseLevel
 
 @export var ball_on_break: bool = false # Do we spawn balls on breaking blocks?
 @export var rainbow_on_break: bool = true # Do we spawn rainbows on breaking blocks?
-
 @export var power_up_on_break: bool = true
+@export_range(0.0, 1.0) var power_up_probability: float = 0.1
+
 var ball_scene: PackedScene = load("res://ball/ball_2d.tscn")
 var power_up_scene: PackedScene = load("res://power_up/power_up.tscn")
 
@@ -44,7 +45,7 @@ func _on_block_broken(location):
 	if rainbow_on_break:
 		spawn_rainbow(location)
 	if power_up_on_break:
-		if (randi_range(0, 10) == 1):
+		if randf() <= power_up_probability:
 			spawn_power_up(location)
 
 func spawn_power_up(location := Vector2.ZERO):
