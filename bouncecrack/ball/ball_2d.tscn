@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dy5pmi4ap118i" path="res://ball/TempBall.png" id="1_myhnp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0nnx"]
-size = Vector2(12, 12)
+size = Vector2(12, 24)
 
 [node name="Ball2D" type="CharacterBody2D"]
 collision_layer = 2

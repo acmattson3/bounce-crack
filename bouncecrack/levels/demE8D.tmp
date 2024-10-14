@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://2tp4ccmlp36w"]
+
+[ext_resource type="PackedScene" uid="uid://ch1i2f5ubyhbr" path="res://levels/base_level_2d.tscn" id="1_svl7e"]
+[ext_resource type="PackedScene" uid="uid://ct2jjmuvxpa3n" path="res://blocks/block_group_2d.tscn" id="2_k3i67"]
+[ext_resource type="PackedScene" uid="uid://b8e2orb1qqu53" path="res://start/start.tscn" id="3_spl4j"]
+[ext_resource type="Script" path="res://start/start.gd" id="4_d1bxf"]
+
+[node name="DemoLevel2D" instance=ExtResource("1_svl7e")]
+
+[node name="BlockGroup2D" parent="Blocks" index="0" instance=ExtResource("2_k3i67")]
+position = Vector2(0, -580)
+group_size_x = 11
+group_size_y = 8
+
+[node name="Start" parent="." index="7" instance=ExtResource("3_spl4j")]
+script = ExtResource("4_d1bxf")

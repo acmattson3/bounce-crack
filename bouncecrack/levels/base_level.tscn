@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch1i2f5ubyhbr"]
+[gd_scene load_steps=7 format=3 uid="uid://ch1i2f5ubyhbr"]
 
 [ext_resource type="Script" path="res://levels/base_level.gd" id="1_spv6l"]
 [ext_resource type="PackedScene" uid="uid://dlod2omqbdval" path="res://player_paddle/player_paddle_2d.tscn" id="2_qxhxt"]
 [ext_resource type="PackedScene" uid="uid://bixuqfbuwj8ky" path="res://ball/ball_2d.tscn" id="3_7ac1t"]
 
+[ext_resource type="PackedScene" uid="uid://b8e2orb1qqu53" path="res://pause/pause.tscn" id="4_pv4yk"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yr2eb"]
-size = Vector2(100, 2000)
+size = Vector2(100, 2200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csklp"]
-size = Vector2(2500, 100)
+size = Vector2(3400, 100)
 
 [node name="base_level" type="Node2D"]
 script = ExtResource("1_spv6l")
@@ -22,43 +24,124 @@ zoom = Vector2(0.5, 0.5)
 [node name="LevelWalls2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelWalls2D"]
-position = Vector2(1202, 0)
+position = Vector2(1650, 0)
 shape = SubResource("RectangleShape2D_yr2eb")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelWalls2D"]
-position = Vector2(-1202, 0)
+position = Vector2(-1650, 0)
 shape = SubResource("RectangleShape2D_yr2eb")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelWalls2D"]
-position = Vector2(0, -1018)
+position = Vector2(0, -1050)
 shape = SubResource("RectangleShape2D_csklp")
 
 [node name="Balls" type="Node2D" parent="."]
 
 [node name="Ball2D2" parent="Balls" instance=ExtResource("3_7ac1t")]
+position = Vector2(0, 240)
 
 [node name="Blocks" type="Node2D" parent="."]
 
 [node name="PowerUps" type="Node2D" parent="."]
 
-[node name="TempGameOverLabel" type="Label" parent="."]
+[node name="Blocks" type="Node2D" parent="."]
+
+[node name="GameOverScreen" type="NinePatchRect" parent="."]
 visible = false
-offset_left = -705.0
-offset_top = -412.0
-offset_right = 710.0
-offset_bottom = -63.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1600.0
+offset_top = -1000.0
+offset_right = 1600.0
+offset_bottom = 1000.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="GameOverScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TempGameOverLabel" type="Label" parent="GameOverScreen/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_stretch_ratio = 4.0
 theme_override_font_sizes/font_size = 256
 text = "Game over!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TempScoreLabel" type="Label" parent="."]
-visible = false
-offset_left = -708.0
-offset_top = -175.0
-offset_right = 707.0
-offset_bottom = 174.0
+[node name="TempScoreLabel" type="Label" parent="GameOverScreen/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_stretch_ratio = 4.0
 theme_override_font_sizes/font_size = 64
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameOverScreen/VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RestartButton" type="Button" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = " Restart "
+
+[node name="Spacer2" type="Control" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="NextLevelButton" type="Button" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = " Next Level "
+
+[node name="Spacer4" type="Control" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="ExitToMenuButton" type="Button" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = " Exit to Menu "
+
+[node name="Spacer3" type="Control" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="GameOverScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PauseOverlay" parent="." instance=ExtResource("4_pv4yk")]
+offset_left = -1600.0
+offset_top = -1000.0
+
+[connection signal="pressed" from="GameOverScreen/VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="GameOverScreen/VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="GameOverScreen/VBoxContainer/HBoxContainer/ExitToMenuButton" to="." method="_on_exit_to_menu_button_pressed"]

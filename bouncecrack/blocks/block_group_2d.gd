@@ -3,7 +3,7 @@ extends Node2D
 # A group of blocks. Controls motion of the entire group, how many blocks to
 # have, etc etc.
 
-var block_scene := load("res://blocks/breakable_block.tscn")
+@export var block_scene := load("res://blocks/breakable_block.tscn")
 const block_dims := Vector2(194.0, 80.0)
 
 @export var group_size_x: int = 4:
@@ -23,7 +23,7 @@ const block_dims := Vector2(194.0, 80.0)
 func _ready() -> void:
 	_set_block_group()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if get_child_count() == 0:
 		queue_free()
 
