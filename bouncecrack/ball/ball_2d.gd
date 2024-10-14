@@ -33,18 +33,21 @@ func _on_bottom_area_2d_body_entered(body: Node2D) -> void:
 		direction.y = -direction.y
 	if body is BreakableBlock:
 		body.break_block()
+		speed += 5
 func _on_top_area_2d_body_entered(body: Node2D) -> void:
 	if body is Paddle:
 		return
 	direction.y = -direction.y
 	if body is BreakableBlock:
 		body.break_block()
+		speed += 5
 func _on_right_area_2d_body_entered(body: Node2D) -> void:
 	if body is Paddle:
 		return
 	direction.x = -direction.x
 	if body is BreakableBlock:
 		body.break_block()
+		speed += 5
 func _on_left_area_2d_body_entered(body: Node2D) -> void:
 	if body is Paddle:
 		return
@@ -53,3 +56,4 @@ func _on_left_area_2d_body_entered(body: Node2D) -> void:
 	direction.x = -direction.x
 	if body is BreakableBlock:
 		body.break_block()
+		speed += 5
