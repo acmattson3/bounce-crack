@@ -41,6 +41,8 @@ position = Vector2(0, 240)
 
 [node name="Blocks" type="Node2D" parent="."]
 
+[node name="PowerUps" type="Node2D" parent="."]
+
 [node name="GameOverScreen" type="NinePatchRect" parent="."]
 visible = false
 anchors_preset = 15
