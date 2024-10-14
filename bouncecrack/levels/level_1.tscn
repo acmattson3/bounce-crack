@@ -6,9 +6,10 @@
 
 [node name="level_1" instance=ExtResource("1_xgtdf")]
 script = ExtResource("2_hk6l0")
+power_up_probability = 0.25
 
 [node name="BlockGroup2D" parent="Blocks" index="0" instance=ExtResource("3_bp87v")]
 position = Vector2(0, -500)
 
-[node name="PauseOverlay" parent="." index="6"]
+[node name="PauseOverlay" parent="." index="7"]
 level_name = "Level 1"

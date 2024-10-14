@@ -6,6 +6,7 @@
 
 [node name="demo_level" instance=ExtResource("1_acc23")]
 script = ExtResource("2_xipbn")
+power_up_probability = 1.0
 
 [node name="BlockGroup2D" parent="Blocks" index="0" instance=ExtResource("3_rbh4a")]
 position = Vector2(0, -570)

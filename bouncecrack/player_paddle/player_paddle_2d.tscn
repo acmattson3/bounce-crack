@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cuohjbwmq4rfl" path="res://player_paddle/TempPlayerPaddle.png" id="1_wihmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cnje6"]
-size = Vector2(195, 195)
+size = Vector2(195, 102)
 
 [node name="PlayerPaddle2D" type="CharacterBody2D"]
 script = ExtResource("1_burlg")
@@ -14,5 +14,5 @@ texture = ExtResource("1_wihmp")
 offset = Vector2(0, 30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 79.5)
+position = Vector2(0, 33)
 shape = SubResource("RectangleShape2D_cnje6")

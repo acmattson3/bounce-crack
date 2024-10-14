@@ -19,7 +19,8 @@ func _ready() -> void:
 
 func _physics_process(_delta):
 	if $Balls.get_child_count() == 0 and not EventHandler.is_game_over:
-		EventHandler.game_over.emit(false) # You lose!
+		if $PowerUps.get_child_count() == 0: # We still have a chance!
+			EventHandler.game_over.emit(false) # You lose!
 	if $Blocks.get_child_count() <= 0 and not EventHandler.is_game_over:
 		EventHandler.game_over.emit(true) # You win!
 
