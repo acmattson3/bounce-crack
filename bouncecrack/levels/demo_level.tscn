@@ -12,5 +12,5 @@ position = Vector2(0, -570)
 group_size_x = 1
 group_size_y = 1
 
-[node name="PauseOverlay" parent="." index="6"]
+[node name="PauseOverlay" parent="." index="7"]
 level_name = "Demo Level"
