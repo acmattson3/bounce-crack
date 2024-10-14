@@ -12,6 +12,7 @@ script = ExtResource("1_burlg")
 [node name="TempPlayerPaddle" type="Sprite2D" parent="."]
 texture = ExtResource("1_wihmp")
 offset = Vector2(0, 30)
+region_rect = Rect2(0, 0, 195, 99)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 33)
