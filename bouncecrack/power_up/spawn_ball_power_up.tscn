@@ -5,3 +5,4 @@
 
 [node name="spawn_ball_power_up" instance=ExtResource("1_chn7q")]
 script = ExtResource("2_kefvf")
+ball_spawn_num = 1

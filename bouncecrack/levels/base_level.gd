@@ -5,7 +5,7 @@ class_name BaseLevel
 
 @export var ball_on_break: bool = false # Do we spawn balls on breaking blocks?
 @export var rainbow_on_break: bool = true # Do we spawn rainbows on breaking blocks?
-@export var power_up_on_break: bool = true
+@export var power_up_on_break: bool = true # Do we spawn power ups on breaking blocks?
 @export_range(0.0, 1.0) var power_up_probability: float = 0.1
 
 var ball_scene: PackedScene = load("res://ball/ball_2d.tscn")
@@ -18,11 +18,22 @@ func _ready() -> void:
 	EventHandler.exit_to_menu.connect(_on_exit_to_menu)
 
 func _physics_process(_delta):
+	# There are no more balls
 	if $Balls.get_child_count() == 0 and not EventHandler.is_game_over:
-		if $PowerUps.get_child_count() == 0: # We still have a chance!
+		# We may still have a chance!
+		var has_chance := false # Assume we don't
+		for child in $PowerUps.get_children():
+			if child is SpawnBall: # We can spawn more balls!
+				has_chance = true
+				break
+			# Can check other types of power ups going forward.
+		if not has_chance: # No chance of winning!
 			EventHandler.game_over.emit(false) # You lose!
+	
+	# There are no more blocks
 	if $Blocks.get_child_count() <= 0 and not EventHandler.is_game_over:
 		EventHandler.game_over.emit(true) # You win!
+	
 
 func _on_game_over(game_won):
 	$GameOverScreen.show()
@@ -52,6 +63,7 @@ func _on_block_broken(location):
 func spawn_power_up(location := Vector2.ZERO):
 	var new_power_up = power_up_scene.instantiate()
 	new_power_up.global_position = location
+	# Can add logic here to change power up parameters in overwrites of this function.
 	$PowerUps.add_child.call_deferred(new_power_up)
 
 func spawn_rainbow(_location := Vector2.ZERO):
