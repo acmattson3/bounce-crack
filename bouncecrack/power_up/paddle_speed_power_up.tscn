@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://chjig1uu5u3jr"]
+
+[ext_resource type="PackedScene" uid="uid://dgrk60fsnxk7p" path="res://power_up/power_up.tscn" id="1_emas2"]
+[ext_resource type="Script" path="res://power_up/paddle_speed_power_up.gd" id="2_hj4eu"]
+
+[node name="paddle_speed_power_up" instance=ExtResource("1_emas2")]
+script = ExtResource("2_hj4eu")
