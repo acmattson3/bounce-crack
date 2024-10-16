@@ -10,9 +10,10 @@ class_name BaseLevel
 
 var ball_scene: PackedScene = load("res://ball/ball_2d.tscn")
 var ball_power_up_scene: PackedScene = load("res://power_up/spawn_ball_power_up.tscn")
-var paddle_power_up_scene: PackedScene = load("res://power_up/paddle_speed_power_up.tscn")
+var paddle_speed_power_up_scene: PackedScene = load("res://power_up/paddle_speed_power_up.tscn")
+var paddle_size_power_up_scene: PackedScene = load("res://power_up/paddle_size_power_up.tscn")
 
-const POWER_UP_TYPES = 2
+const POWER_UP_TYPES = 3
 
 func _ready() -> void:
 	EventHandler.game_over.connect(_on_game_over)
@@ -71,7 +72,9 @@ func spawn_power_up(location := Vector2.ZERO):
 	if (rand_result == 1):
 		new_power_up = ball_power_up_scene.instantiate()
 	elif (rand_result == 2):
-		new_power_up = paddle_power_up_scene.instantiate()
+		new_power_up = paddle_speed_power_up_scene.instantiate()
+	elif (rand_result == 3):
+		new_power_up = paddle_size_power_up_scene.instantiate()
 	
 	new_power_up.global_position = location
 	# Can add logic here to change power up parameters in overwrites of this function.

@@ -1,5 +1,5 @@
 extends PowerUp
-class_name PaddleSpeed
+class_name PaddleSize
 
 
 func _physics_process(delta: float) -> void:
@@ -8,6 +8,6 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	# From parent virtual function
 	if body is Paddle:
-		if (body.speed + 150 < 1501):
-			body.speed += 150
+		if body.paddle_width + 20.0 < 260.0:
+			body.paddle_width += 20.0
 		queue_free()

@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://chjig1uu5u3jr"]
+[gd_scene load_steps=4 format=3 uid="uid://chjig1uu5u3jr"]
 
 [ext_resource type="PackedScene" uid="uid://dgrk60fsnxk7p" path="res://power_up/power_up.tscn" id="1_emas2"]
 [ext_resource type="Script" path="res://power_up/paddle_speed_power_up.gd" id="2_hj4eu"]
+[ext_resource type="Texture2D" uid="uid://bxdk251jia2wt" path="res://power_up/paddle_speed_power_up.png" id="3_w2p6q"]
 
 [node name="paddle_speed_power_up" instance=ExtResource("1_emas2")]
 script = ExtResource("2_hj4eu")
+
+[node name="PowerUp" parent="." index="0"]
+visible = false
+
+[node name="PaddlePowerUp" type="Sprite2D" parent="." index="2"]
+position = Vector2(5.96046e-08, 5)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("3_w2p6q")
