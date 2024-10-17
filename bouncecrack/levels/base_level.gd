@@ -10,6 +10,7 @@ class_name BaseLevel
 
 var ball_scene: PackedScene = load("res://ball/ball_2d.tscn")
 var power_up_scene: PackedScene = load("res://power_up/spawn_ball_power_up.tscn")
+var sparkle_scene: PackedScene = preload("res://blocks/sparkles.tscn")
 
 func _ready() -> void:
 	EventHandler.game_over.connect(_on_game_over)
@@ -66,8 +67,11 @@ func spawn_power_up(location := Vector2.ZERO):
 	# Can add logic here to change power up parameters in overwrites of this function.
 	$PowerUps.add_child.call_deferred(new_power_up)
 
-func spawn_rainbow(_location := Vector2.ZERO):
-	pass # Write me Kylie!
+func spawn_rainbow(location := Vector2.ZERO):
+	# Write me Kylie!
+	var confetti = sparkle_scene.instantiate()
+	confetti.global_position = location
+	add_child.call_deferred(confetti)
 
 func _on_create_ball(location := Vector2.ZERO, direction := Vector2.DOWN, speed := 1200.0):
 	var new_ball = ball_scene.instantiate()

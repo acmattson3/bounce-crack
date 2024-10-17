@@ -22,6 +22,7 @@ func _ready() -> void:
 
 func _on_block_broken(_location):
 	score += 1
+	
 
 func _on_game_over(_game_won):
 	is_game_over = true
