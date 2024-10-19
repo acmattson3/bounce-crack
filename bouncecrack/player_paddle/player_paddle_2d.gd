@@ -8,7 +8,8 @@ class_name Paddle
 		$TempPlayerPaddle.scale.x *= value / paddle_width
 		paddle_width = value
 
-var speed = 900.0
+@export var speed = 900.0
+
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return # Allows us to use @tool without breaking the editor
