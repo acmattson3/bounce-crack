@@ -1,8 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6obwd83n3fkc"]
+[gd_scene load_steps=4 format=3 uid="uid://b6obwd83n3fkc"]
 
 [ext_resource type="PackedScene" uid="uid://dgrk60fsnxk7p" path="res://power_up/power_up.tscn" id="1_chn7q"]
 [ext_resource type="Script" path="res://power_up/spawn_ball_power_up.gd" id="2_kefvf"]
+[ext_resource type="Texture2D" uid="uid://dx5fl3rok37w5" path="res://power_up/ball_power_up.png" id="3_ldoii"]
 
 [node name="spawn_ball_power_up" instance=ExtResource("1_chn7q")]
 script = ExtResource("2_kefvf")
 ball_spawn_num = 1
+
+[node name="PowerUp" parent="." index="0"]
+visible = false
+
+[node name="BallPowerUp" type="Sprite2D" parent="." index="2"]
+position = Vector2(-1, 7)
+scale = Vector2(0.315, 0.315)
+texture = ExtResource("3_ldoii")
