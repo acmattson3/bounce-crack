@@ -159,6 +159,24 @@ theme_override_constants/h_separation = 25
 theme_override_constants/v_separation = 25
 columns = 4
 
+[node name="demo_level" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Demo Level"
+
+[node name="level_1" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Level 1"
+
+[node name="level_2" type="Button" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer/LevelsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+text = "Level 2"
+
 [node name="Spacer2" type="Control" parent="LevelsContainer/NinePatchRect/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
