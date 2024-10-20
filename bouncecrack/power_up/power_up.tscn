@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bxtqqq64vyt3q" path="res://power_up/power_up.png" id="1_1gfil"]
 [ext_resource type="Script" path="res://power_up/power_up.gd" id="1_bn4qf"]
-[ext_resource type="Shader" path="res://blocks/rainbow.gdshader" id="2_jpgea"]
+[ext_resource type="Shader" path="res://rainbow.gdshader" id="2_jpgea"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lkf4s"]
 shader = ExtResource("2_jpgea")
