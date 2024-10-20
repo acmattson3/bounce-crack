@@ -8,10 +8,9 @@
 script = ExtResource("2_kefvf")
 ball_spawn_num = 1
 
-[node name="PowerUp" parent="." index="0"]
-visible = false
-
 [node name="BallPowerUp" type="Sprite2D" parent="." index="2"]
+visible = false
+use_parent_material = true
 position = Vector2(-1, 7)
 scale = Vector2(0.315, 0.315)
 texture = ExtResource("3_ldoii")

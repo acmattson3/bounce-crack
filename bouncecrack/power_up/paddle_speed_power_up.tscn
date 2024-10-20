@@ -7,10 +7,9 @@
 [node name="paddle_speed_power_up" instance=ExtResource("1_emas2")]
 script = ExtResource("2_hj4eu")
 
-[node name="PowerUp" parent="." index="0"]
-visible = false
-
 [node name="PaddlePowerUp" type="Sprite2D" parent="." index="2"]
+visible = false
+use_parent_material = true
 position = Vector2(5.96046e-08, 5)
 scale = Vector2(0.31, 0.31)
 texture = ExtResource("3_w2p6q")
