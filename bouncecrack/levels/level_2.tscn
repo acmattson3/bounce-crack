@@ -40,5 +40,5 @@ position = Vector2(192, -498)
 group_size_x = 5
 group_size_y = 9
 
-[node name="PauseOverlay" parent="." index="10"]
+[node name="PauseOverlay" parent="." index="11"]
 level_name = "Level 2"

@@ -18,14 +18,18 @@ func _ready() -> void:
 	
 	process_mode = PROCESS_MODE_ALWAYS # # We are unaffected by pausing the scene tree.
 	
-	for level: String in EventHandler.get_levels():
-		var new_button := Button.new()
-		new_button.add_theme_font_size_override("font_size", 48)
-		new_button.name = level.rstrip(".tscn")
-		new_button.text = new_button.name.capitalize()
-		new_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		new_button.pressed.connect(_handle_level_button.bind(level))
-		%LevelsGridContainer.add_child(new_button, true)
+	#for level: String in EventHandler.get_levels():
+		#var new_button := Button.new()
+		#new_button.add_theme_font_size_override("font_size", 48)
+		#new_button.name = level.rstrip(".tscn")
+		#new_button.text = new_button.name.capitalize()
+		#new_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		#new_button.pressed.connect(_handle_level_button.bind(level))
+		#%LevelsGridContainer.add_child(new_button, true)
+	
+	# Buttons are hard coded for export support
+	for button in %LevelsGridContainer.get_children():
+		button.pressed.connect(_handle_level_button.bind(button.name+".tscn"))
 
 
 func _handle_level_button(level_name):

@@ -4,13 +4,9 @@ extends Node2D
 
 var lifetime = 0.0;
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	$GPUParticles2D.emitting = true
 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	lifetime += delta
 	if lifetime > 1.0:

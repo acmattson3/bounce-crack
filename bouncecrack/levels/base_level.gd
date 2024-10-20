@@ -9,8 +9,12 @@ class_name BaseLevel
 @export_range(0.0, 1.0) var power_up_probability: float = 0.1
 
 var ball_scene: PackedScene = load("res://ball/ball_2d.tscn")
-var power_up_scene: PackedScene = load("res://power_up/spawn_ball_power_up.tscn")
 var sparkle_scene: PackedScene = preload("res://blocks/sparkles.tscn")
+var ball_power_up_scene: PackedScene = load("res://power_up/spawn_ball_power_up.tscn")
+var paddle_speed_power_up_scene: PackedScene = load("res://power_up/paddle_speed_power_up.tscn")
+var paddle_size_power_up_scene: PackedScene = load("res://power_up/paddle_size_power_up.tscn")
+
+const POWER_UP_TYPES = 3
 
 func _ready() -> void:
 	EventHandler.game_over.connect(_on_game_over)
@@ -62,13 +66,22 @@ func _on_block_broken(location):
 			spawn_power_up(location)
 
 func spawn_power_up(location := Vector2.ZERO):
-	var new_power_up = power_up_scene.instantiate()
+	var new_power_up = ball_power_up_scene.instantiate()
+
+	var rand_result = randi_range(1, POWER_UP_TYPES)
+	
+	if (rand_result == 1):
+		new_power_up = ball_power_up_scene.instantiate()
+	elif (rand_result == 2):
+		new_power_up = paddle_speed_power_up_scene.instantiate()
+	elif (rand_result == 3):
+		new_power_up = paddle_size_power_up_scene.instantiate()
+	
 	new_power_up.global_position = location
 	# Can add logic here to change power up parameters in overwrites of this function.
 	$PowerUps.add_child.call_deferred(new_power_up)
 
 func spawn_rainbow(location := Vector2.ZERO):
-	# Write me Kylie!
 	var confetti = sparkle_scene.instantiate()
 	confetti.global_position = location
 	add_child.call_deferred(confetti)

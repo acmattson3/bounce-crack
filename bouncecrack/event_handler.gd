@@ -53,18 +53,20 @@ func start_level(level_name: String, advance_level := false):
 
 func fill_levels():
 	_levels = []
-	var dir = DirAccess.open("res://levels")
-	if dir:
-		dir.list_dir_begin()
-		var filename = dir.get_next()
-		while filename != "":
-			if not dir.current_is_dir():
-				if filename.get_extension() == "tscn" and filename != "base_level.tscn":
-					_levels.append(filename)
-			filename = dir.get_next()
-		_levels.sort()
-	else:
-		print("Failed to open `res://levels` directory.")
+	#var dir = DirAccess.open("res://levels")
+	#if dir:
+		#dir.list_dir_begin()
+		#var filename = dir.get_next()
+		#while filename != "":
+			#if not dir.current_is_dir():
+				#if filename.get_extension() == "tscn" and filename != "base_level.tscn":
+					#_levels.append(filename)
+			#filename = dir.get_next()
+		#_levels.sort()
+	#else:
+		#print("Failed to open `res://levels` directory.")
+	# Hard code levels for now (exports can't see traditional files!)
+	_levels = ["demo_level.tscn", "level_1.tscn", "level_2.tscn"]
 
 func get_levels():
 	return _levels

@@ -21,7 +21,7 @@ angle_curve = SubResource("CurveTexture_q7f6x")
 spread = 180.0
 flatness = 0.865
 initial_velocity_max = 150.0
-gravity = Vector3(0, 500, 0)
+gravity = Vector3(0, 100, 0)
 scale_max = 8.0
 scale_over_velocity_max = 1000.0
 color = Color(0.857093, 0.276701, 0.878349, 1)
@@ -32,9 +32,10 @@ hue_variation_max = 1.0
 script = ExtResource("1_1laib")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_cugqw")
-preprocess = 193.94
+one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 visibility_rect = Rect2(0, 0, 0, 0)
