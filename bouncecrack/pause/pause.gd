@@ -11,6 +11,8 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return # Allows us to use @tool without breaking the editor
 	process_mode = PROCESS_MODE_ALWAYS # We are unaffected by pausing the scene tree.
+	if EventHandler.brownie_mode:
+		$VBoxContainer/HBoxContainer2/ToggleBrownies.set_pressed_no_signal(true)
 	get_tree().paused = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,3 +32,6 @@ func _on_exit_to_menu_button_pressed() -> void:
 
 func _on_restart_level_pressed() -> void:
 	get_parent()._on_restart_button_pressed() # Cursed
+
+func _on_toggle_brownies_toggled(toggled_on: bool) -> void:
+	EventHandler.toggle_brownies.emit(toggled_on)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxf3r7es7ifwj"]
+[gd_scene load_steps=5 format=3 uid="uid://cxf3r7es7ifwj"]
 
 [ext_resource type="Script" path="res://blocks/breakable_block.gd" id="1_d2rnj"]
 [ext_resource type="Texture2D" uid="uid://b3uev8j1c4tru" path="res://blocks/blue_purple_block.png" id="1_l2m82"]
+[ext_resource type="Texture2D" uid="uid://g2cpt7mgqs8o" path="res://blocks/brownie.jpg" id="3_cwjmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6wvx"]
 size = Vector2(194, 80)
@@ -16,3 +17,9 @@ offset = Vector2(0, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_e6wvx")
+
+[node name="BrownieBlock" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.39, 0.31)
+texture = ExtResource("3_cwjmj")
+offset = Vector2(0, 0.5)

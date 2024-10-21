@@ -6,6 +6,8 @@ signal exit_to_menu(error)
 var _levels: Array = []
 
 # Game signals
+signal toggle_brownies(do_brownies)
+var brownie_mode: bool = false
 signal block_broken(location)
 signal create_ball(location, direction, speed) # Emit me to make a new ball!
 signal game_over(game_won)
@@ -19,6 +21,10 @@ func _ready() -> void:
 	fill_levels()
 	block_broken.connect(_on_block_broken)
 	game_over.connect(_on_game_over)
+	toggle_brownies.connect(_on_toggle_brownies)
+
+func _on_toggle_brownies(do_brownies):
+	brownie_mode = do_brownies
 
 func _on_block_broken(_location):
 	score += 1

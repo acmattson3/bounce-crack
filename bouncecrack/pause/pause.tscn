@@ -59,6 +59,28 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer3" type="Control" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="ToggleBrownies" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 72
+toggle_mode = true
+text = "Brownie Mode"
+
+[node name="Spacer4" type="Control" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
 [node name="Spacer2" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -80,3 +102,4 @@ size_flags_stretch_ratio = 3.0
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/RestartLevel" to="." method="_on_restart_level_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/ExitToMenuButton2" to="." method="_on_exit_to_menu_button_pressed"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer2/ToggleBrownies" to="." method="_on_toggle_brownies_toggled"]
