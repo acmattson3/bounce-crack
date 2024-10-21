@@ -66,7 +66,7 @@ func _on_block_broken(location):
 			spawn_power_up(location)
 
 func spawn_power_up(location := Vector2.ZERO):
-	var new_power_up = ball_power_up_scene.instantiate()
+	var new_power_up = null
 
 	var rand_result = randi_range(1, POWER_UP_TYPES)
 	
@@ -77,9 +77,10 @@ func spawn_power_up(location := Vector2.ZERO):
 	elif (rand_result == 3):
 		new_power_up = paddle_size_power_up_scene.instantiate()
 	
-	new_power_up.global_position = location
-	# Can add logic here to change power up parameters in overwrites of this function.
-	$PowerUps.add_child.call_deferred(new_power_up)
+	if new_power_up:
+		new_power_up.global_position = location
+		# Can add logic here to change power up parameters in overwrites of this function.
+		$PowerUps.add_child.call_deferred(new_power_up)
 
 func spawn_rainbow(location := Vector2.ZERO):
 	var confetti = sparkle_scene.instantiate()
