@@ -7,6 +7,7 @@
 
 [node name="level_2" instance=ExtResource("1_ahu55")]
 script = ExtResource("2_012al")
+power_up_probability = 0.2
 
 [node name="Ball2D2" parent="Balls" index="0"]
 position = Vector2(0, 523)
@@ -24,21 +25,21 @@ group_size_x = 1
 group_size_y = 8
 
 [node name="BlockGroup2D4" parent="." index="6" instance=ExtResource("3_bsidr")]
-position = Vector2(289, 44)
+position = Vector2(594.35, 43)
 block_scene = ExtResource("4_5e6cv")
-group_size_x = 7
+group_size_x = 10
 group_size_y = 1
 
-[node name="BlockGroup2D5" parent="." index="7" instance=ExtResource("3_bsidr")]
-position = Vector2(901, -496)
+[node name="BlockGroup2D6" parent="." index="7" instance=ExtResource("3_bsidr")]
+position = Vector2(-1380, 47)
 block_scene = ExtResource("4_5e6cv")
-group_size_x = 1
-group_size_y = 11
+group_size_x = 2
+group_size_y = 1
 
 [node name="BlockGroup2D" parent="Blocks" index="0" instance=ExtResource("3_bsidr")]
-position = Vector2(192, -498)
-group_size_x = 5
-group_size_y = 9
+position = Vector2(664.325, -447.33)
+group_size_x = 8
+group_size_y = 8
 
 [node name="PauseOverlay" parent="." index="11"]
 level_name = "Level 2"
