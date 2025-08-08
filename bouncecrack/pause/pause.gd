@@ -15,6 +15,11 @@ func _ready() -> void:
 		$VBoxContainer/HBoxContainer2/ToggleBrownies.set_pressed_no_signal(true)
 	get_tree().paused = true
 
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and visible:
+		get_tree().paused = false
+		hide()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():

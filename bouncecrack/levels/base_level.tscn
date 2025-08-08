@@ -22,6 +22,29 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="LevelWalls2D" type="StaticBody2D" parent="."]
 
+[node name="ColorRect" type="ColorRect" parent="LevelWalls2D"]
+custom_minimum_size = Vector2(0, 2000)
+offset_left = -1640.0
+offset_top = -1000.0
+offset_right = -1600.0
+offset_bottom = 1000.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="LevelWalls2D"]
+custom_minimum_size = Vector2(0, 2000)
+offset_left = 1600.0
+offset_top = -1000.0
+offset_right = 1640.0
+offset_bottom = 1000.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="LevelWalls2D"]
+offset_left = -1640.0
+offset_top = -1040.0
+offset_right = 1640.0
+offset_bottom = -1000.0
+color = Color(0, 0, 0, 1)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelWalls2D"]
 position = Vector2(1650, 0)
 shape = SubResource("RectangleShape2D_yr2eb")
