@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b8e2orb1qqu53"]
 
-[ext_resource type="Script" path="res://pause/pause.gd" id="1_bvhw1"]
+[ext_resource type="Script" uid="uid://dyev2nc1onu8i" path="res://pause/pause.gd" id="1_bvhw1"]
 
 [node name="PauseOverlay" type="PanelContainer"]
 offset_right = 1600.0

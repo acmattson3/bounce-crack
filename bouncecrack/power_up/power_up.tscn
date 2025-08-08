@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dgrk60fsnxk7p"]
 
 [ext_resource type="Texture2D" uid="uid://bxtqqq64vyt3q" path="res://power_up/power_up.png" id="1_1gfil"]
-[ext_resource type="Script" path="res://power_up/power_up.gd" id="1_bn4qf"]
-[ext_resource type="Shader" path="res://rainbow.gdshader" id="2_jpgea"]
+[ext_resource type="Script" uid="uid://bpkwswgq3af3j" path="res://power_up/power_up.gd" id="1_bn4qf"]
+[ext_resource type="Shader" uid="uid://n1encaxwyltx" path="res://rainbow.gdshader" id="2_jpgea"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lkf4s"]
 shader = ExtResource("2_jpgea")

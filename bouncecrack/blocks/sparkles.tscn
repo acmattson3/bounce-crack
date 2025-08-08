@@ -1,10 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://wpwrw3q5ffdg"]
 
-[ext_resource type="Script" path="res://blocks/sparkles.gd" id="1_1laib"]
+[ext_resource type="Script" uid="uid://dad2l1tdhql1y" path="res://blocks/sparkles.gd" id="1_1laib"]
 
 [sub_resource type="Curve" id="Curve_7umhu"]
-min_value = -360.0
-max_value = 360.0
+_limits = [-360.0, 360.0, 0.0, 1.0]
 _data = [Vector2(0.261589, -203.505), 0.0, 0.0, 0, 0, Vector2(0.71192, 113.963), 0.0, 0.0, 0, 0]
 point_count = 2
 

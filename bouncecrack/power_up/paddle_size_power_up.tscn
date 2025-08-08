@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://v2lvcot80u3b"]
 
 [ext_resource type="PackedScene" uid="uid://dgrk60fsnxk7p" path="res://power_up/power_up.tscn" id="1_wou1t"]
-[ext_resource type="Script" path="res://power_up/paddle_size_power_up.gd" id="2_1yaey"]
+[ext_resource type="Script" uid="uid://fa5utoca0w7t" path="res://power_up/paddle_size_power_up.gd" id="2_1yaey"]
 [ext_resource type="Texture2D" uid="uid://dovnwg2c4dvw5" path="res://power_up/paddle_width_power_up.png" id="2_rwc77"]
 
 [node name="paddle_width_power_up" instance=ExtResource("1_wou1t")]
